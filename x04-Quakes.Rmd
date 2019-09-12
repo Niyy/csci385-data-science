@@ -1,0 +1,51 @@
+---
+title: "Exploring Quakes"
+output: html_notebook
+author: Austin Meyer
+date: September 10 2019
+---
+
+The data form bellow contains the location, depth, and magnitude of earth quakes recorded by stations near or on those locations.
+```{r}
+data(quakes)
+```
+The data contains data about the location of the quakes. This data is still not enought to locate it, but we do have the station that recorded the data. Here is the graph:
+```{r}
+plot(quakes$long, quakes$lat)
+```
+The data also has the magnitude of the earthquakes recorded at a certain depth.
+```{r}
+plot(quakes$depth, quakes$mag, type = "h")
+```
+The data types of each column are as described:
+```{r}
+typeof(quakes$lat)
+typeof(quakes$long)
+typeof(quakes$depth)
+typeof(quakes$mag)
+typeof(quakes$stations)
+```
+Further reserch into the location of this data will help us understand the resources for the countries. Having the time of occurance could also help us use this data.
+
+The average latitude of quakes is:
+```{r}
+mean(quakes$lat)
+```
+The average longitude of quakes is:
+```{r}
+mean(quakes$long)
+```
+The average depth of quakes were around:
+```{r}
+mean(quakes$mag)
+```
+The median of all quakes was:
+```{r}
+median(quakes$mag)
+```
+The most quakes occured at station:
+```{r}
+median(quakes$stations)
+```
+
+A great question to answer is were the most earth quakes occur. Maybe finding a earth quake hot spot like a fault.
